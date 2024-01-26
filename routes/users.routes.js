@@ -5,10 +5,11 @@ const {
   getUserById,
   searchUsersByQuery,
 } = require("../controllers/users.controllers");
+const validateSearchQuery = require("../middlewares/validateSearchQuery");
 
 // Note: Always put static routes before dynamic routes.
 router.get("/", getUsersData);
-router.get("/search", searchUsersByQuery);
+router.get("/search", validateSearchQuery, searchUsersByQuery);
 router.get("/:uuid", getUserById);
 
 module.exports = router;
