@@ -13,7 +13,6 @@ router.get("/:uuid", getUserById);
 
 module.exports = router;
 
-
 /* If I define routes in index.js page then we define 
 routes using app.get() method but If I define routes in seperate 
 routes folder than it uses router.get().*/

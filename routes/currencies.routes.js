@@ -8,5 +8,4 @@ const {
 router.get("/", getCurrenciesData);
 router.get("/:symbol", getCurrenciesDataById);
 
-
 module.exports = router;
