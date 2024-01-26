@@ -1,3 +1,5 @@
+const joi = require('joi');
+
 const { data } = require("../currencies.json");
 
 const getCurrenciesData = (req, res) => {
