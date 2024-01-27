@@ -1,14 +1,16 @@
-const PASSWORD = process.env.ROUTE_PASSWORD;
+const Password = process.env.ROUTE_PASSWORD;
+
 const verifyAuth = (req, res, next) => {
-  const authorization = req.headers["authorization"];
+  const { authorization } = req.headers;
   if (!authorization) {
-    return res.status(401).json({ message: "unauthorized" });
+    return res.status(403).json({ message: "Unauthorized Request" });
   }
 
-  if (authorization !== PASSWORD) {
-    return res.status(401).json({ message: "unauthorized" });
+  if (authorization !== Password) {
+    return res.status(403).json({ message: "Unauthorized Request" });
   }
-  next(); //passes the request to the next object in line
+
+  next();
 };
 
-module.exports = verifyAuth;
+module.exports = { verifyAuth };

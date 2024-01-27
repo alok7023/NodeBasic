@@ -34,3 +34,5 @@ const searchUsersByQuery = (req, res) => {
 };
 
 module.exports = { getUsersData, getUserById, searchUsersByQuery };
+
+
